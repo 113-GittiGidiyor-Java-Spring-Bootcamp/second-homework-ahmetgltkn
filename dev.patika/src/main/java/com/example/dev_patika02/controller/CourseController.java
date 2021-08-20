@@ -25,6 +25,13 @@ public class CourseController {
         return new ResponseEntity<>(courseService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/courses/{id}")
+    public Course findCourseById(@PathVariable int id){
+
+        return  courseService.findById(id);
+    }
+
+
     @PostMapping("/courses")
     public Course saveCourses(@RequestBody Course course){
 
@@ -37,11 +44,6 @@ public class CourseController {
         courseService.deleteById(id);
     }
 
-    @GetMapping("/courses/{id}")
-    public Course findCourseById(@PathVariable int id){
-
-        return  courseService.findById(id);
-    }
 
     @PutMapping("/courses/{id}")
     public Course updateCourse(@RequestBody Course course, @PathVariable int id){

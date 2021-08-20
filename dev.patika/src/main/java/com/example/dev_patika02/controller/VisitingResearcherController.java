@@ -26,14 +26,14 @@ public class VisitingResearcherController {
     }
 
     @PostMapping("/visitings/{id}")
-    public VisitingResearcher findById(@PathVariable int id){
+    public VisitingResearcher findVisitingById(@PathVariable int id){
 
         return visitingResearcherService.findById(id);
     }
 
 
     @PostMapping("/visitings")
-    public VisitingResearcher save(@RequestBody VisitingResearcher visitingResearcher){
+    public VisitingResearcher saveVisitings(@RequestBody VisitingResearcher visitingResearcher){
         return visitingResearcherService.save(visitingResearcher);
     }
 
@@ -45,7 +45,7 @@ public class VisitingResearcherController {
 
 
     @PutMapping("/visitings/{id}")
-    public VisitingResearcher updateOnDatabase(@RequestBody  VisitingResearcher visitingResearcher,@PathVariable int id){
+    public VisitingResearcher updateVisiting(@RequestBody  VisitingResearcher visitingResearcher,@PathVariable int id){
         return visitingResearcherService.updateOnDatabase(visitingResearcher,id);
     }
 

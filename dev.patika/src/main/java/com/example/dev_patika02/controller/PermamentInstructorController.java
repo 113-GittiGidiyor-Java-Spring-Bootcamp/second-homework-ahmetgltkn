@@ -2,6 +2,7 @@ package com.example.dev_patika02.controller;
 
 
 import com.example.dev_patika02.model.PermanentInstructor;
+import com.example.dev_patika02.model.Student;
 import com.example.dev_patika02.service.PermamentInstructorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +24,10 @@ public class PermamentInstructorController {
     public ResponseEntity<List<PermanentInstructor>> findAll(){
         return new ResponseEntity<>(permamentInstructorService.findAll(), HttpStatus.OK);
     }
-
-    @PostMapping("/permaments/{id}")
-    public PermanentInstructor findById(@PathVariable int id){
-
-        return permamentInstructorService.findById(id);
+    @GetMapping("/permaments/{id}")
+    public PermanentInstructor findPermamentById(@PathVariable int id){
+        return  permamentInstructorService.findById(id);
     }
-
 
     @PostMapping("/permaments")
     public PermanentInstructor save(@RequestBody PermanentInstructor permanentInstructor){
@@ -38,13 +36,13 @@ public class PermamentInstructorController {
 
 
     @DeleteMapping(value = "/permaments/{id}")
-    public void deletePermamentInstructorById(@PathVariable int id){
+    public void deletePermamentById(@PathVariable int id){
         permamentInstructorService.deleteById(id);
     }
 
 
     @PutMapping("/permaments/{id}")
-    public PermanentInstructor updateOnDatabase(@RequestBody  PermanentInstructor permanentInstructor,@PathVariable int id){
+    public PermanentInstructor updatePermamentById(@RequestBody  PermanentInstructor permanentInstructor,@PathVariable int id){
         return permamentInstructorService.updateOnDatabase(permanentInstructor,id);
     }
 

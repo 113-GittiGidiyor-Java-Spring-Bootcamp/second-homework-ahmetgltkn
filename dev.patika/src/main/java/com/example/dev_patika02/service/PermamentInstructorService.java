@@ -26,7 +26,9 @@ public class PermamentInstructorService implements BaseService<PermanentInstruct
     }
 
     @Override
+    @Transactional
     public PermanentInstructor findById(int id) {
+
         return (PermanentInstructor) permamentInstructorDAO.findById(id);
     }
 
