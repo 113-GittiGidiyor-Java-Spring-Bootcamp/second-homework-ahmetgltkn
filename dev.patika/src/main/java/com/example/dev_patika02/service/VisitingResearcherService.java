@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class VisitingResearcherService implements BaseService<VisitingResearcher> {
 
+    //**
     private VisitingResearcherDAO visitingResearcherDAO;
 
     public VisitingResearcherService(VisitingResearcherDAO visitingResearcherDAO) {
